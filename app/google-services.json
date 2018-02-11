@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "923650219629",
+    "firebase_url": "https://authexample-8881c.firebaseio.com",
+    "project_id": "authexample-8881c",
+    "storage_bucket": "authexample-8881c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923650219629:android:5da3788dbf32d958",
+        "android_client_info": {
+          "package_name": "com.example.omerakkus.authexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923650219629-q7fg295q3v8ncsumhtpsjl4mqa89b3jb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.omerakkus.authexample",
+            "certificate_hash": "e61489de30abbeb42c253817282f4e5f39335c97"
+          }
+        },
+        {
+          "client_id": "923650219629-n64da0iphv8gnr7b2uttob88qm85479o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFLpVCHd_xDEK_pSEiARHpXGad0ci1M24"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923650219629-n64da0iphv8gnr7b2uttob88qm85479o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
