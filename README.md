@@ -1,2 +1,2 @@
-# firebaseAuth
-This project includes Firebase Authentication Android example.
+# Firebase Authentication Sample
+This project includes Firebase Authentication sample for Android.
