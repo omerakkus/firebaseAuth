@@ -16,42 +16,39 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-/**
- * Created by omer.akkus on 4.02.2018.
- */
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText uyeEmail,uyeParola;
-    Button yeniUyeButton,uyeGirisButton;
+    EditText email,password;
+    Button registerButton,loginButton;
     FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
 
-        uyeEmail = (EditText) findViewById(R.id.uyeEmail);
-        uyeParola = (EditText) findViewById(R.id.uyeParola);
-        yeniUyeButton = (Button) findViewById(R.id.yeniUyeButton);
-        uyeGirisButton = (Button) findViewById(R.id.uyeGirisButton);
+        email = (EditText) findViewById(R.id.uyeEmail);
+        password = (EditText) findViewById(R.id.uyeParola);
+        registerButton = (Button) findViewById(R.id.yeniUyeButton);
+        loginButton = (Button) findViewById(R.id.uyeGirisButton);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        yeniUyeButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = uyeEmail.getText().toString();
-                String parola = uyeParola.getText().toString();
+                String email = email.getText().toString();
+                String password = password.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(getApplicationContext(),"Lütfen E-mail Giriniz!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Please fill in the required fields",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(parola)){
-                    Toast.makeText(getApplicationContext(),"Lütfen PArola Giriniz!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Please fill in the required fields",Toast.LENGTH_SHORT).show();
                 }
 
                 if(parola.length()<6){
-                    Toast.makeText(getApplicationContext(),"Parola en az 6 karakter olmalı",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Password must be at least 6 characters",Toast.LENGTH_SHORT).show();
                 }
 
                 firebaseAuth.createUserWithEmailAndPassword(email,parola)
@@ -63,14 +60,14 @@ public class RegisterActivity extends AppCompatActivity {
                                         finish();
                                     }
                                     else{
-                                        Toast.makeText(getApplicationContext(),"Sorun oluştu",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(),"E-mail or password is wrong",Toast.LENGTH_SHORT).show();
                                     }
                             }
                         });
             }
         });
 
-        uyeGirisButton.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
