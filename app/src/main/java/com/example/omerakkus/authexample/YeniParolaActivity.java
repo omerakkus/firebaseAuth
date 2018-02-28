@@ -14,9 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-/**
- * Created by omer.akkus on 4.02.2018.
- */
 
 public class YeniParolaActivity extends AppCompatActivity {
     EditText uyeEmail;
@@ -46,10 +43,10 @@ public class YeniParolaActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(getApplicationContext(),"Mail adresinize gönderidli",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Password reset link was sent your email address",Toast.LENGTH_SHORT).show();
                                 }
                                 else{
-                                    Toast.makeText(getApplicationContext(),"Mail gönderme hatası",Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),"Mail sending error",Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
