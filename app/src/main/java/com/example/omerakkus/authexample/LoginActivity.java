@@ -29,8 +29,8 @@ import com.google.firebase.auth.GoogleAuthProvider;
  */
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-    EditText girisEmail,girisParola;
-    Button girisButton,uyeOlButton,yeniSifreButton;
+    EditText loginEmail,loginPassword;
+    Button loginButton,registerButton,newPassButton;
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
     FirebaseAuth firebaseAuth;
@@ -40,12 +40,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        girisEmail = (EditText) findViewById(R.id.girisEmail);
-        girisParola = (EditText) findViewById(R.id.girisParola);
-        girisButton = (Button) findViewById(R.id.girisButton);
+        loginEmail = (EditText) findViewById(R.id.girisEmail);
+        loginPassword = (EditText) findViewById(R.id.girisParola);
+        loginButton = (Button) findViewById(R.id.girisButton);
         uyeOlButton = (Button) findViewById(R.id.uyeOlButton);
         signInButton = (SignInButton) findViewById(R.id.sign_in_button);
-        yeniSifreButton = (Button) findViewById(R.id.yeniSifreButton);
+        newPassButton = (Button) findViewById(R.id.yeniSifreButton);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
