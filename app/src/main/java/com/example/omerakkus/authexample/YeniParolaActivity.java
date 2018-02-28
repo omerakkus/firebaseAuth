@@ -16,22 +16,22 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class YeniParolaActivity extends AppCompatActivity {
-    EditText uyeEmail;
-    Button yeniParolaGonder;
+    EditText email;
+    Button btnNewPass;
     FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.yeni_parola_activity);
-        uyeEmail = (EditText) findViewById(R.id.uyeEmail);
-        yeniParolaGonder = (Button) findViewById(R.id.yeniParolaGonder);
+        email = (EditText) findViewById(R.id.uyeEmail);
+        btnNewPass = (Button) findViewById(R.id.yeniParolaGonder);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        yeniParolaGonder.setOnClickListener(new View.OnClickListener() {
+        btnNewPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = uyeEmail.getText().toString();
+                String email = email.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
                     Toast.makeText(getApplicationContext(),"Please fill e-mail",Toast.LENGTH_SHORT).show();
