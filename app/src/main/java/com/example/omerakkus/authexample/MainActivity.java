@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
-    Button kullaniciSil,cikis_yap;
+    Button btnDeleteUser,btnLogout;
     FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener  authStateListener;
 
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.textView1);
-        kullaniciSil =(Button) findViewById(R.id.kullaniciSil);
-        cikis_yap =(Button) findViewById(R.id.cikis_yap);
+        btnDeleteUser =(Button) findViewById(R.id.kullaniciSil);
+        btnLogout =(Button) findViewById(R.id.cikis_yap);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
         };
 
         final FirebaseUser user  = firebaseAuth.getCurrentUser();
-         textView.setText("Merhaba " + user.getDisplayName());
+         textView.setText("Hi " + user.getDisplayName());
 
-         kullaniciSil.setOnClickListener(new View.OnClickListener() {
+         btnDeleteUser.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  if(user!=null){
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                                  @Override
                                  public void onComplete(@NonNull Task<Void> task) {
                                      if(task.isSuccessful()){
-                                         Toast.makeText(getApplicationContext(),"Kullanıcı silindi",Toast.LENGTH_SHORT).show();
+                                         Toast.makeText(getApplicationContext(),"User deleted",Toast.LENGTH_SHORT).show();
                                          startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
                                          finish();
                                      }
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
              }
          });
 
-         cikis_yap.setOnClickListener(new View.OnClickListener() {
+         btnLogout.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  firebaseAuth.signOut();
